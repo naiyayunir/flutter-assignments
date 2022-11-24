@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:counter_7/main.dart';
-import 'package:counter_7/dataBudget.dart';
+import 'package:counter_7/page/dataBudget.dart';
+import 'package:counter_7/page/mywatchlistpage.dart';
+import 'package:flutter/services.dart';
+
+
 class TambahBudgetPage extends StatefulWidget {
     const TambahBudgetPage({super.key});
 
     @override
     State<TambahBudgetPage> createState() => _TambahBudgetPageState();
 }
-
-
 
 class _TambahBudgetPageState extends State<TambahBudgetPage> {
 
@@ -58,6 +60,16 @@ List<String> listJenis = ['Pengeluaran','Pemasukan'];
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(builder: (context) => const DataBudgetPage()),
+              );
+            },
+          ),
+          ListTile(
+            title: const Text('My Watchlist'),
+            onTap: () {
+              // Route menu ke halaman watchlist
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => const MyWatchlistPage()),
               );
             },
           ),
